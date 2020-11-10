@@ -1,0 +1,10 @@
+[1014/121817.591:ERROR:settings.cc(430)] Settings version is not 5
+[1014/122817.604:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1014/140952.600:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Priyansh Aadeshra\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\42f7fc24-77e4-4baf-b6fb-c545d66f2195: The system cannot find the path specified. (0x3)
+[1014/141109.054:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Priyansh Aadeshra\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\a06e6f40-5364-4b25-88f2-716f5025c880: The system cannot find the path specified. (0x3)
+[1014/141210.253:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Priyansh Aadeshra\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\b7fc26f6-623b-47c5-bf6e-ba95abf810f1: The system cannot find the path specified. (0x3)
+[1014/142055.571:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1020/100201.657:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[1020/100209.114:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[1020/102256.087:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[1022/151417.052:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

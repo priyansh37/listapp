@@ -1,0 +1,8 @@
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let item of itemPropInfo?.PropertyPictures">
+    <div class="picsum-img-wrapper" style="margin-bottom: 10PX;">
+      <img src="https://bhaktaniwas.com/{{item?.PropertyPicturePath}}" alt="Random first slide" height="200px"
+        width="312px">
+    </div>
+  </ng-template>
+</ngb-carousel>

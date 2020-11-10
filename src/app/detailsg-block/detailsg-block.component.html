@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-7 bg-light">
+    <div>
+      <p class="top"><strong>{{itemPropInfo?.PropertyShortName}}</strong></p>
+    </div>
+    <div class="pills col-sm">
+      <span class="badge badge-pill badge-light" *ngFor="let item of itemPropInfo?.PropertyFacilitiesDtlMasters">
+        <i class="fa {{item.FacilitiesMaster?.PicturePath}}" ></i>
+        {{item.FacilitiesMaster?.FacilitiesName}}</span>
+    </div>
+  </div>
+  <div class="col-md-4 bg-secondary text-white ">
+    <div class="row">
+      <div class="col-sm-5 ">
+        <a class="btn btn-primary top" (click)="getHotelDetails()" routerLinkActive ="active" routerLink="HotelDetail/{{itemPropInfo?.PropertyGUID}}" type="button" value="BookNow">Button </a>
+      </div>
+      <div class="col-sm-6 " *ngFor="let item of itemPropInfo?.MinPackage?.PackagePriceMasters">
+        <p class="top"><strong>{{item.PackagePrice}} /Day</strong></p>                                                                        
+      </div>
+    </div>
+  </div>
+</div>

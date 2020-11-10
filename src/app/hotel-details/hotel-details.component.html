@@ -1,0 +1,124 @@
+<div class="conatiner">
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-md-8">
+      <div *ngFor="let item of details?.RoomTypeMasters">
+        <ngb-carousel>
+          <ng-template ngbSlide *ngFor="let item of item?.PropertyMaster?.PropertyPictures">
+            <div class="picsum-img-wrapper" style="margin-bottom: 10PX;">
+              <img src="https://bhaktaniwas.com/{{item?.PropertyPicturePath}}" alt="Random first slide" height="450px"
+                width="950px">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+      <div>
+        <br />
+        <h4>{{ details?.PropertyShortName }}</h4>
+        <br />
+        <Address><b>Address : </b>{{ details?.Address }}</Address>
+      </div>
+      <hr />
+      <div>
+        <ul class="nav" style="list-style-type: none">
+          <li class="nav-item">
+            <a class="nav-link" href="#overview">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Facilities">Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#room_type">Select Option</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Property-Location">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#policies">Polices</a>
+          </li>
+        </ul>
+      </div>
+      <section id="overview">
+        <div>
+          <h5>Overview :</h5>
+          <span style="font-size: 15px" [innerHTML]="details?.PropertyDescription"></span>
+        </div>
+      </section>
+      <section id="Facilities">
+        <div>
+          <h5>Facilities :</h5>
+          <ul class="list-gruop" style="list-style-type: none">
+            <li class="badge badge-light">Car Parking</li>
+            <li class="badge badge-light">Car Rental</li>
+            <li class="badge badge-light">Free Wifi</li>
+            <li class="badge badge-light">Restaurant on premise</li>
+            <li class="badge badge-light">Travel Desk</li>
+            <li class="badge badge-light">24 Hours Hot & Cold Water</li>
+            <li class="badge badge-light">Laundry Service</li>
+            <li class="badge badge-light">Daily Linen Change</li>
+          </ul>
+        </div>
+      </section>
+      <section id="room_type">
+        <h5>Select Option :</h5>
+        <div>
+          <app-room-select class="" *ngFor="let item of details?.RoomTypeMasters" [roomtype]="item" (childEvent)="selectedItem=$event"></app-room-select>
+        </div>
+      </section>
+      <section id="Property-Location">
+        <h5>Location : </h5>
+        <div>
+          <iframe
+            [src]="'https://www.google.com/maps/embed/v1/place?key=AIzaSyAXCamISFSDry8izvf5WxY_jrUi3nxurME&q='+details?.PropertyShortName | safe:'resourceUrl'"
+            width="730" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+        </div>
+      </section>
+      <section class="hotel-policies mb-4" id="policies">
+        <h5>Policies : </h5>
+        <hr />
+        <h5>Hours Information</h5>
+        <p>Check-In : 12:00 - Check-Out : 11:00</p>
+        <h5>Rules</h5>
+        <p class="justify-content-text">
+          Check in: 12 PM | Check-out: 11 AM<br />
+        </p>
+        <h5>Cancellation Policy</h5>
+        <p class="justify-content-text">
+          <span style="font-family: Arial, Helvetica, sans-serif; font-size: medium">From Booking date to 48&nbsp; Hours
+            Prior to Check-In Date 0%
+            penalty will be charged.</span><br /><br /><span
+            style="font-family: Arial, Helvetica, sans-serif; font-size: medium">If you cancel the booking during 48 -
+            Hours before Check-In Date
+            ,100% penalty will be charged.In case of no show : no refund.</span><br /><br /><span
+            style="font-family: Arial, Helvetica, sans-serif; font-size: medium">Booking cannot be cancelled/modified on
+            or after the check in date
+            and time mentioned in the Hotel Confirmation Voucher</span>
+        </p>
+        <ul>
+          <li>
+            The primary guest must be at least 18 years of age to be able to
+            check into the hotel.
+          </li>
+          <li>
+            It is mandatory for guests to present valid photo identification at
+            the time of check-in. According to government regulations, a valid
+            Photo ID has to be carried by every person above the age of 18
+            staying at the hotel. The identification proofs accepted are Aadhar
+            Card, Driving License, Voter ID Card, and Passport. Without Original
+            copy of valid ID the guest will not be allowed to check-in.
+          </li>
+          <li>PAN card is not accepted as a valid ID card.</li>
+          <li>
+            Extra mattress will be provided for triple occupancy bookings.
+          </li>
+          <li>Pets are not allowed in the hotel premises.</li>
+        </ul>
+      </section>
+    </div>
+    <div class="col-md-4">
+      <app-sidebar class="position-fixed" [details]="details" [selectedItem]="selectedItem"></app-sidebar>
+      <!-- {{selectedItem | json}} -->
+    </div>
+  </div>
+</div>
+<!--  (childEvent)="roomDetails=$event" -->

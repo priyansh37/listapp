@@ -1,0 +1,51 @@
+<!-- <p>{{roomtype?.Address}}</p> -->
+<div class="row no-gutters">
+  <div class="col-md-12" style="border: 1px solid #dee2e6!important;">
+    <div class="row no-gutters">
+      <div class="col-md-4 card">
+        <ngb-carousel>
+          <ng-template ngbSlide *ngFor="let item of roomtype?.RoomPictureMasters">
+            <div class="picsum-img-wrapper" style="margin-bottom: 10PX;">
+              <img src="https://bhaktaniwas.com/{{item?.RoomPicturePath}}" alt="Random first slide" height="150px"
+                width="300px">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+      <div class="col-md-8">
+        <div class="text-center">
+          <div style="margin-left:20px; margin-top: 30px;">
+            {{roomtype?.RoomTypeName}}
+            <div><span> {{roomtype?.NoOfBedRooms}} Bedroom.{{roomtype?.NoOfBathRoom}} PrivateBath</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="row no-gutters">
+      <div class="col-md-7">
+        <div class="border-right border-bottom" *ngFor="let item of roomtype?.PackageMasters">
+          {{item?.PackageName | json}}
+          <div><span class="badge badge-light">Swimming Pool</span></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="border-right border-bottom" style="text-size-adjust: 10px;"
+          *ngFor="let item of roomtype?.PackagePriceMasters">{{item?.PackagePrice}} /Night
+          <div>
+            Extra guest : {{item?.ExtraBedPrice | currency:"INR"}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div *ngFor="let item of roomtype?.PackageMasters">
+          <div *ngFor="let item of item?.PackagePriceMasters">
+            <!-- {{priceDetails | json}} -->
+            <input type="button" (click)="getPrice(item)" class="btn btn-primary float-right border-right border-bottom" value="button">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

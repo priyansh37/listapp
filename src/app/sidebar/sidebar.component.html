@@ -1,0 +1,99 @@
+<!-- <section style="border: 1px solid grey ; padding:5px"> -->
+<form [formGroup]="RoomDetailsData" (ngSubmit)="Total()">
+  <div>
+    <span>{{selectedItem?.PackagePrice | currency:"₹"}}</span>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="border-right mb-0" style="border-right: 1px soild grey;" class="form-group">
+        <input type="date" style="border: none; margin: 2px;"  formControlName="PakageStartDate">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <input type="date" style="border: none; margin: 2px;" formControlName="PakageEndDate">
+      </div>
+    </div>
+  </div>
+  <div style="margin: 2px;">
+      <div *ngFor="let item of details?.RoomTypeMasters" >
+        <select>
+          <option *ngFor="let item of item?.PackageMasters">{{item.PackageName}}</option>
+        </select>
+      </div>
+      <div>
+        <label [class.selected]="cb3.checked">
+          <input #cb3 type="checkbox" value="true" (change)="logCheckbox(cb3)"> Extra Bed
+        </label>
+      </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6">
+        <div>
+          Total :
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="text-right">
+          {{total}}
+        </div>
+      </div>
+    </div>
+    <div class="col text-center" style="margin: 2px;">
+      <input class="btn btn-primary text-center" (click)="Total()" type="button" value="Book">
+    </div>
+  </div>
+</form>
+<!-- </section> -->
+<!-- <div class="btn-group" ngbDropdown role="group">
+        <button class="btn btn-outline-primary" ngbDropdownToggle>Select me</button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <div *ngFor="let item of details?.RoomTypeMasters">
+              <button ngbDropdownItem *ngFor="let item of item?.PackageMasters">{{item.PackageName}}</button>
+            </div>
+          </div>
+        </div>   -->
+<!-- <div class="row">
+        <div class="col-sm-6">
+          <div style="margin: 2px;">
+            taxes
+          </div>
+        </div>
+        <div class="col--sm-6">
+          <div class="text-right" style="margin: 2px;">
+            show taxes price
+          </div>
+        </div>
+      </div> -->
+<!-- (click)="getPrice(item)"  -->
+<!-- <select class="browser-default custom-select">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select> -->
+<!-- <h1>Add Resto</h1>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert"> 
+    <strong>Success ! </strong>Data is Submited.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form [formGroup]="RoomDetailsData" (ngSubmit)="Total()" >
+    <div class="form-group">
+        <label>PackagePrice</label>
+        <input type="text" class="form-control" placeholder="Enter name" formControlName="PackagePrice">{{selectedItem?.PackagePrice | currency:"₹"}}
+    </div>
+    <div class="form-group">
+        <label>PackageName</label>
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="PackageName">
+    </div>
+    <div class="form-group">
+        <label>Total</label>
+        <input type="text" class="form-control" placeholder="Enter Address" formControlName="TotalPakagePrice" >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form> -->

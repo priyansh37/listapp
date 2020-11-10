@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row" style="margin: 10px 0 0 0;">
+      <div class="col-md-4">
+        <h6>Showing Pages</h6>
+      </div>
+      <div class="col-md-4">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" ngbDropdownToggle>Pages</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem> <a href="https://www.youtube.com/">10</a></button>
+              <button ngbDropdownItem>20</button>
+              <button ngbDropdownItem>30  </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6>Page Sort</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-resto-block  *ngFor="let itemPro of collection?.list" [item]="itemPro"></app-resto-block>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md " style="margin: 10px 0 0 0;">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="https://www.youtube.com/">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
